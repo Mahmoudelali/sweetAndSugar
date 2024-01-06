@@ -18,8 +18,8 @@ import leGateauLogo from './assets/images/logos/leGateau.png';
 
 import { IoMdInformationCircle } from 'react-icons/io';
 
-import { IoCall } from 'react-icons/io5';
-import { FaTags } from 'react-icons/fa6';
+import { IoCall, IoLogoFacebook, IoLogoWhatsapp } from 'react-icons/io5';
+import { FaInstagram, FaSlideshare, FaTags, FaTiktok } from 'react-icons/fa6';
 import { GoHomeFill } from 'react-icons/go';
 
 export const data = {
@@ -33,22 +33,83 @@ export const data = {
 		{ name: 'about us', to: '/about', icon: <IoMdInformationCircle /> },
 		{ name: 'contact', to: '/contact', icon: <IoCall /> },
 	],
-	brands: [
-		{ name: 'sevenDays', brandLogo: sevenDaysLogo },
-		{ name: 'takis', brandLogo: takisLogo },
-		{ name: 'daisy', brandLogo: daisyLogo },
-		{ name: 'nutella', brandLogo: nutellaLogo },
-		{ name: 'zengaz', brandLogo: zengazLogo },
-		{ name: 'lams', brandLogo: lamsLogo },
-		{ name: 'freshleys', brandLogo: freshleysLogo },
-		{ name: 'bayamesa', brandLogo: bayamesaLogo },
-		{ name: 'ovenDelights', brandLogo: ovenDelightsLogo },
-		{ name: 'nemos', brandLogo: nemosLogo },
-		{ name: 'tates', brandLogo: tatesLogo },
-		{ name: 'littleDebbie', brandLogo: littleDebbieLogo },
-		{ name: 'fritoLay', brandLogo: fritoLayLogo },
-		{ name: 'drake', brandLogo: drakeLogo },
-		{ name: 'hostess', brandLogo: hostessLogo },
-		{ name: 'leGateau', brandLogo: leGateauLogo },
+	sideLinksContact: [
+		{
+			name: 'facebook',
+			url: 'https://www.facebook.com/GatheringOfRight?mibextid=LQQJ4d',
+			icon: <IoLogoFacebook />,
+			bgcolor: '#4267b3',
+		},
+		{
+			name: 'instagram',
+			url: 'https://www.instagram.com/core_tech.lb?igsh=Nmh4dnQyejV0MXEx&utm_source=qr',
+			icon: <FaInstagram />,
+			bgcolor: '#dd2a7b',
+		},
+		{
+			name: 'tiktok',
+			url: 'https://www.tiktok.com/@core.tech.lb',
+			icon: <FaTiktok />,
+			bgcolor: '#000',
+		},
+		{
+			name: 'Whatsapp',
+			url: `https://wa.me/${process.env.REACT_APP_ADMIN_NUMBER}`,
+			icon: <IoLogoWhatsapp />,
+			bgcolor: '#25d366',
+		},
+		{
+			name: 'Share',
+			url: '',
+			icon: <FaSlideshare />,
+			bgcolor: '#48494B',
+		},
 	],
+	brands: [
+		{ name: 'sevenDays', brandLogo: sevenDaysLogo, id: 'sevenDays' },
+		{ name: 'takis', brandLogo: takisLogo, id: 'takis' },
+		{ name: 'daisy', brandLogo: daisyLogo, id: 'daisy' },
+		{ name: 'nutella', brandLogo: nutellaLogo, id: 'nutella' },
+		{ name: 'zengaz', brandLogo: zengazLogo, id: 'zengaz' },
+		{ name: 'lams', brandLogo: lamsLogo, id: 'lams' },
+		{ name: 'freshleys', brandLogo: freshleysLogo, id: 'mrsFreshleys' },
+		{ name: 'bayamesa', brandLogo: bayamesaLogo, id: 'laBayamesa' },
+		{
+			name: 'ovenDelights',
+			brandLogo: ovenDelightsLogo,
+			id: 'ovenDelights',
+		},
+		{ name: 'nemos', brandLogo: nemosLogo, id: 'nemos' },
+		{ name: 'tates', brandLogo: tatesLogo, id: 'tates' },
+		{
+			name: 'littleDebbie',
+			brandLogo: littleDebbieLogo,
+			id: 'littleDebbie',
+		},
+		{ name: 'fritoLay', brandLogo: fritoLayLogo, id: 'frito-lay' },
+		{ name: 'drake', brandLogo: drakeLogo, id: 'drakes' },
+		{ name: 'hostess', brandLogo: hostessLogo, id: 'hostess' },
+		{ name: 'leGateau', brandLogo: leGateauLogo, id: 'leGateau' },
+	],
+	responsive: {
+		desktop: {
+			breakpoint: { max: 3000, min: 1024 },
+			items: 3,
+			slidesToSlide: 3, // optional, default to 1.
+		},
+		tablet: {
+			breakpoint: { max: 1024, min: 464 },
+			items: 2,
+			slidesToSlide: 2, // optional, default to 1.
+		},
+		mobile: {
+			breakpoint: { max: 464, min: 0 },
+			items: 1,
+			slidesToSlide: 1, // optional, default to 1.
+		},
+	},
+};
+
+export const scrollToTop = () => {
+	window.scrollTo(0, 0);
 };

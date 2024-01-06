@@ -1,6 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { webData } from '../../data';
 import { SearchContent } from '../../App';
+import Product from '../../components/product';
+import { Link } from 'react-router-dom';
+
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import { data as dataConfig } from '../../config';
+import testImage from '../../assets/images/bgimagetest.jpg';
 
 const Home = () => {
 	const [originalData] = useState(webData.products);
@@ -29,34 +36,78 @@ const Home = () => {
 	}, [search, originalData]);
 
 	return (
-		<section className="pt-3 px-2">
-			{Object.entries(data).map(
-				([key, value], index) =>
-					value.items.length > 0 && (
-						<div key={index} className="mb-8">
-							<h2 className="text-6xl text-red-800 mb-5 font-sevillana tracking-widest px-3 first-letter:uppercase">
-								{value.brandLogo}
-							</h2>
-							<div className="flex flex-wrap justify-evenly">
-								{value.items.map((prod, index) => (
-									<article
-										className="w-[45%] border p-1 mb-3 rounded-lg shadow-md flex flex-col items-center"
-										key={index}
-									>
-										<img
-											src={prod.image_path}
-											alt={prod.name}
-										/>
-										<p className="text-center text-sm tracking-wide">
-											{prod.name}
-										</p>
-									</article>
-								))}
+		<>
+			<section className="mt-10 py-2 relative z-0">
+				<Carousel
+					responsive={dataConfig.responsive}
+					swipeable={true}
+					draggable={true}
+					infinite={true}
+					autoPlay={true}
+					autoPlaySpeed={3000}
+					keyBoardControl={true}
+					containerClass="carousel-container"
+					dotListClass="custom-dot-list-style"
+					itemClass="carousel-item-padding-40-px"
+				>
+					<img src={testImage} />
+					<img src={testImage} />
+					<img src={testImage} />
+					<img src={testImage} />
+				</Carousel>
+			</section>
+			<section className="">
+				<h1 className=" font-kalam text-4xl text-red-700 font-semibold pl-4 text-center tracking-wider  my-8">
+					Where Every Bite Is Worth Craving
+				</h1>
+				{Object.entries(data).map(([key, value], index) => {
+					var splicedArr = [];
+					splicedArr = value.items.slice(0, 6);
+					return (
+						splicedArr.length > 0 && (
+							<div
+								key={index}
+								style={{
+									background: `linear-gradient(30deg ,${value.accent} , ${value.accent}20)`,
+									margin: 0,
+								}}
+							>
+								<Link
+									to={`/brands/${value.id}`}
+									className="text-6xl text-red-800 font-sevillana tracking-widest px-3 first-letter:uppercase"
+								>
+									{value.brandLogo}
+								</Link>
+								<div className="flex flex-wrap justify-evenly">
+									{splicedArr.map((prod, index) => {
+										return (
+											<Product
+												prod={prod}
+												key={index}
+												bg={value.accent}
+											/>
+										);
+									})}
+								</div>
+								<div className="flex items-center justify-center  py-8">
+									{value.items.length > 6 && (
+										<Link
+											to={`/brands/${value.id}`}
+											style={{
+												backgroundColor: value.accent,
+											}}
+											className="uppercase text-lg font-kalam text-white  py-2 px-4 rounded-lg inline-block mx-auto w-auto"
+										>
+											See more!
+										</Link>
+									)}
+								</div>
 							</div>
-						</div>
-					),
-			)}
-		</section>
+						)
+					);
+				})}
+			</section>
+		</>
 	);
 };
 

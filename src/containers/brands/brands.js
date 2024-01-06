@@ -1,18 +1,23 @@
 import React from 'react';
 import { data } from '../../config';
+import { Link } from 'react-router-dom';
+import { webData } from '../../data';
 
 const Brands = () => {
 	return (
 		<div className="mt-12">
-			<h1 className="font-sevillana text-5xl text-red-700 font-semibold pl-4 text-center tracking-wider">
+			<h1 className="font-sevillana text-5xl text-[#e4cd48] font-semibold pl-4 text-center tracking-wider">
 				Our Partners
 			</h1>
 			<main>
-				{data.brands.map((brand, index) => (
-					<article key={index}>
-						<img src={brand.brandLogo} className="block mx-auto:" />
-					</article>
-				))}
+				{Object.entries(webData.products).map(
+					([k, v], index) =>
+						!!v.items.length && (
+							<Link to={v.id} key={index}>
+								<article key={index}>{v.brandLogo}</article>
+							</Link>
+						),
+				)}
 			</main>
 		</div>
 	);

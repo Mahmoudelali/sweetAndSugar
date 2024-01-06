@@ -2,9 +2,10 @@
 module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	theme: {
-		extend: { 
+		extend: {
 			fontFamily: {
 				sevillana: ['Sevillana'],
+				kalam: ['Kalam', 'cursive'],
 			},
 		},
 	},
