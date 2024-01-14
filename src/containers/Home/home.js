@@ -9,6 +9,12 @@ import 'react-multi-carousel/lib/styles.css';
 import { data as dataConfig } from '../../config';
 import testImage from '../../assets/images/bgimagetest.jpg';
 
+// poster images
+import poster1 from '../../assets/posters/WhatsApp Image 2024-01-10 at 11.35.20 PM.jpeg';
+import poster2 from '../../assets/posters/WhatsApp Image 2024-01-10 at 11.35.20 PM (1).jpeg';
+import poster3 from '../../assets/posters/WhatsApp Image 2024-01-10 at 11.35.20 PM (2).jpeg';
+import poster4 from '../../assets/posters/WhatsApp Image 2024-01-10 at 11.35.20 PM (3).jpeg';
+
 const Home = () => {
 	const [originalData] = useState(webData.products);
 	const [data, setData] = useState(originalData);
@@ -50,10 +56,10 @@ const Home = () => {
 					dotListClass="custom-dot-list-style"
 					itemClass="carousel-item-padding-40-px"
 				>
-					<img src={testImage} />
-					<img src={testImage} />
-					<img src={testImage} />
-					<img src={testImage} />
+					<img src={poster1} />
+					<img src={poster2} />
+					<img src={poster3} />
+					<img src={poster4} />
 				</Carousel>
 			</section>
 			<section className="">
@@ -64,7 +70,7 @@ const Home = () => {
 					var splicedArr = [];
 					splicedArr = value.items.slice(0, 6);
 					return (
-						splicedArr.length > 0 && (
+						splicedArr.length > 2 && (
 							<div
 								key={index}
 								style={{
@@ -76,7 +82,9 @@ const Home = () => {
 									to={`/brands/${value.id}`}
 									className="text-6xl text-red-800 font-sevillana tracking-widest px-3 first-letter:uppercase"
 								>
-									{value.brandLogo}
+									<div className="flex justify-center">
+										{value.brandLogo}
+									</div>
 								</Link>
 								<div className="flex flex-wrap justify-evenly">
 									{splicedArr.map((prod, index) => {

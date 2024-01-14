@@ -1,3 +1,4 @@
+import swal from 'sweetalert2';
 // logos
 import sevenDaysLogo from './assets/images/logos/sevendays.png';
 import takisLogo from './assets/images/logos/takis.png';
@@ -18,7 +19,7 @@ import leGateauLogo from './assets/images/logos/leGateau.png';
 
 import { IoMdInformationCircle } from 'react-icons/io';
 
-import { IoCall, IoLogoFacebook, IoLogoWhatsapp } from 'react-icons/io5';
+import { IoCall, IoLogoFacebook, IoLogoWhatsapp, IoShareSocial } from 'react-icons/io5';
 import { FaInstagram, FaSlideshare, FaTags, FaTiktok } from 'react-icons/fa6';
 import { GoHomeFill } from 'react-icons/go';
 
@@ -35,20 +36,14 @@ export const data = {
 	],
 	sideLinksContact: [
 		{
-			name: 'facebook',
-			url: 'https://www.facebook.com/GatheringOfRight?mibextid=LQQJ4d',
-			icon: <IoLogoFacebook />,
-			bgcolor: '#4267b3',
-		},
-		{
 			name: 'instagram',
-			url: 'https://www.instagram.com/core_tech.lb?igsh=Nmh4dnQyejV0MXEx&utm_source=qr',
+			url: 'https://www.instagram.com/sweetandsugarllc?igsh=dGd3aDQyejY5NDdp&utm_source=qr',
 			icon: <FaInstagram />,
 			bgcolor: '#dd2a7b',
 		},
 		{
 			name: 'tiktok',
-			url: 'https://www.tiktok.com/@core.tech.lb',
+			url: 'https://www.tiktok.com/@sweetandsugarllc1?_t=8iwhfUTJiws&_r=1',
 			icon: <FaTiktok />,
 			bgcolor: '#000',
 		},
@@ -61,7 +56,7 @@ export const data = {
 		{
 			name: 'Share',
 			url: '',
-			icon: <FaSlideshare />,
+			icon: <IoShareSocial />,
 			bgcolor: '#48494B',
 		},
 	],
@@ -112,4 +107,12 @@ export const data = {
 
 export const scrollToTop = () => {
 	window.scrollTo(0, 0);
+};
+
+export const copyUrlToClipboard = () => {
+	navigator.clipboard.writeText(process.env.REACT_APP_SERVER_URL);
+	swal.fire({
+		title: `Sweet and sugar website URL copied to clipboard!`,
+		icon: 'success',
+	});
 };

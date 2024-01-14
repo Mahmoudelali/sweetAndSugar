@@ -7,7 +7,7 @@ import { HiBars3 } from 'react-icons/hi2';
 import { IoClose } from 'react-icons/io5';
 import { SearchContent } from '../../App';
 import logo from '../../assets/images/sweet and sugar .png';
-import { data, scrollToTop } from '../../config';
+import { copyUrlToClipboard, data, scrollToTop } from '../../config';
 import { Link } from 'react-router-dom';
 
 export default function SideMenu({ isSearchDisplayed, setIsSearchDisplayed }) {
@@ -111,21 +111,26 @@ export default function SideMenu({ isSearchDisplayed, setIsSearchDisplayed }) {
 							Happy to hear from you!
 						</h4>
 						<div className="flex gap-2 justify-center">
-							{data.sideLinksContact.map((link, index) => (
-								<div
-									className="rounded-full border border-gray p-1 "
-									key={index}
-								>
-									<span
-										className={`text-[${link.bgcolor}]`}
-										style={{
-											backgroundColor: link.bgcolor,
-										}}
+							{data.sideLinksContact.map((link, index) => {
+								return link.url == '' ? (
+									<button
+										key={index}
+										onClick={() => copyUrlToClipboard()}
+										className="border border-white rounded-full w-9 h-9 text-xl flex justify-center items-center"
 									>
 										{link.icon}
-									</span>
-								</div>
-							))}
+									</button>
+								) : (
+									<a
+										key={index}
+										href={link.url}
+										target="_blank"
+										className="border border-white rounded-full w-9 h-9 text-xl flex justify-center items-center"
+									>
+										{link.icon}
+									</a>
+								);
+							})}
 						</div>
 					</div>
 				</div>

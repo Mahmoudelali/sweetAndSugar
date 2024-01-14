@@ -6,6 +6,7 @@ import { createContext, useState } from 'react';
 import Brands from './containers/brands/brands';
 import Brand from './containers/brand/brand';
 import Contact from './containers/contact/contact';
+import AboutUs from './containers/about/about';
 
 export const SearchContent = createContext();
 
@@ -21,7 +22,7 @@ function App() {
 						<Route path="/brands" element={<Brands />}></Route>
 						<Route path="/brands/:brandId" element={<Brand />} />
 						<Route path="/contact" element={<Contact />} />
-						<Route path="/about" element={<Contact />} />
+						<Route path="/about" element={<AboutUs />} />
 					</Route>
 				</Routes>
 			</BrowserRouter>

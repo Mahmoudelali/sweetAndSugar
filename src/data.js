@@ -1,13 +1,3 @@
-// const inventory = [
-// 	{ name: 'asparagus', type: 'vegetables', quantity: 5 },
-// 	{ name: 'bananas', type: 'fruit', quantity: 0 },
-// 	{ name: 'goat', type: 'meat', quantity: 23 },
-// 	{ name: 'cherries', type: 'fruit', quantity: 5 },
-// 	{ name: 'fish', type: 'meat', quantity: 22 },
-// ];
-// const result = Object.groupBy(inventory, ({ type }) => type);
-// console.log(result);
-
 // logos
 import sevenDaysLogo from './assets/images/logos/sevendays.png';
 import takisLogo from './assets/images/logos/takis.png';
@@ -25,6 +15,19 @@ import fritoLayLogo from './assets/images/logos/fritoLay.png';
 import drakeLogo from './assets/images/logos/drakes.png';
 import hostessLogo from './assets/images/logos/hostess.png';
 import leGateauLogo from './assets/images/logos/leGateau.png';
+import chestersLogo from './assets/images/logos/Chester 27s_Fries_logo.png';
+import crackerJackLogo from './assets/images/logos/Crackerjack_brand_logo.png';
+
+import sunChipsLogo from './assets/images/logos/342-3420732_sun-chips-png-logo-transparent-png-removebg-preview.png';
+import TostitosLogo from './assets/images/logos/Tostitos-logo-removebg-preview.png';
+import smartFoodLogo from './assets/images/logos/logo-footer-removebg-preview.png';
+import rufflesLogo from './assets/images/logos/ruffles-logo-removebg-preview.png';
+import LaysLogo from './assets/images/logos/lays-logo-removebg-preview.png';
+import mrsVickiesLogo from './assets/images/logos/missvickies_logo_hr-removebg-preview.png';
+import cheetosLogo from './assets/images/logos/Cheetos-Logo-removebg-preview (1).png';
+import doritosLogo from './assets/images/logos/download-removebg-preview.png';
+import FritosLogo from './assets/images/logos/Fritos-Logo-removebg-preview (1).png';
+import RoldGoldLogo from './assets/images/logos/Roldgold_brand_logo-removebg-preview.png';
 
 //seven days
 import ChocolateCroissant from './assets/images/products/7days croissant/Croissant, Chocolate Croissant, Breakfas.png';
@@ -271,10 +274,86 @@ export const webData = {
 	webIcon: '',
 
 	products: {
-		takis: {
-			id: 'takis',
-			accent: '#572e8a',
-			brandLogo: <img src={takisLogo} />,
+		Cheetos: {
+			id: 'Cheetos',
+			accent: '#fef104',
+			brandLogo: <img src={cheetosLogo} />,
+			items: [
+				{
+					id: 'cheetos-crunchy',
+					name: 'Cheetos Crunchy',
+					image_path: cheetosCrunchy,
+					brandName: 'Cheetos',
+				},
+				{
+					id: 'cheetos-flaming-hot-crunchy',
+					name: 'Cheetos Flaming Hot Crunchy',
+					image_path: cheetosFlamingHotCrunchy,
+					brandName: 'Cheetos',
+				},
+				{
+					id: 'cheetos-puffs',
+					name: 'Cheetos Puffs',
+					image_path: cheetosPuffs,
+					brandName: 'Cheetos',
+				},
+			],
+		},
+		crackerJack: {
+			id: 'crackerJack',
+			accent: '#fef104',
+			brandLogo: <img src={crackerJackLogo} />,
+			items: [
+				{
+					id: 'cracker-jack',
+					name: 'Cracker Jack',
+					image_path: crackerJack,
+					brandName: 'cracker-jack',
+				},
+			],
+		},
+		chesters: {
+			id: 'chesters',
+			accent: '#fef104',
+			brandLogo: <img src={chestersLogo} />,
+			items: [
+				{
+					id: 'chesters-flaming-hot-fries',
+					name: 'Chesters Flaming Hot Fries',
+					image_path: chestersFlamingHotFries,
+					brandName: 'chesters',
+				},
+			],
+		},
+		sunChips: {
+			id: 'Tostitos',
+			accent: '#ee0c00',
+			brandLogo: <img src={TostitosLogo} />,
+			items: [
+				{
+					id: 'sun-chips-garden-salsa',
+					name: 'Sun Chips Garden Salsa',
+					image_path: sunChipsGardenSalsa,
+					brandName: 'sun chips',
+				},
+				{
+					id: 'sun-chips-harvest-cheddar',
+					name: 'Sun Chips Harvest Cheddar',
+					image_path: sunChipsHarvestCheddar,
+					brandName: 'sun chips',
+				},
+				{
+					id: 'sun-ships-original',
+					name: 'Sun Chips Original',
+					image_path: sunShipsOriginal,
+					brandName: 'sun chips',
+				},
+			],
+		},
+		lays: {
+			id: 'Lays',
+			accent: '#ee0c00',
+			brandLogo: <img src={LaysLogo} />,
 			items: [
 				{
 					id: 'lays-baked-original',
@@ -306,30 +385,13 @@ export const webData = {
 					image_path: laysSourAndCreamOnion,
 					brandName: 'lays',
 				},
-				{
-					id: 'miss-bickies-sea-salt-and-vinegar',
-					name: 'Miss Bickies Sea Salt and Vinegar',
-					image_path: missBickiesSeaSaltAndVinegar,
-					brandName: '',
-				},
-				{
-					id: 'miss-bickies-sea-salt',
-					name: 'Miss Bickies Sea Salt',
-					image_path: missBickiesSeaSalt,
-					brandName: '',
-				},
-				{
-					id: 'miss-vickies-jalapeno',
-					name: 'Miss Vickies Jalapeno',
-					image_path: missVickiesJalapeno,
-					brandName: '',
-				},
-				{
-					id: 'rold-gold-pretzel-thins',
-					name: 'Rold Gold Pretzel Thins',
-					image_path: roldGoldPretzelThins,
-					brandName: '',
-				},
+			],
+		},
+		ruffles: {
+			id: 'ruffles',
+			accent: '#ee0c00',
+			brandLogo: <img src={rufflesLogo} />,
+			items: [
 				{
 					id: 'ruffles-baked-cheddar-and-sour-cream',
 					name: 'Ruffles Baked Cheddar and Sour Cream',
@@ -348,78 +410,64 @@ export const webData = {
 					image_path: rufflesFlaminHotCheddarAndSourCream,
 					brandName: 'Ruffles',
 				},
-				{
-					id: 'smartfood-white-cheddar',
-					name: 'Smartfood White Cheddar',
-					image_path: smartfoodWhiteCheddar,
-					brandName: 'smartfood',
-				},
-				{
-					id: 'sun-chips-garden-salsa',
-					name: 'Sun Chips Garden Salsa',
-					image_path: sunChipsGardenSalsa,
-					brandName: 'sun chips',
-				},
-				{
-					id: 'sun-chips-harvest-cheddar',
-					name: 'Sun Chips Harvest Cheddar',
-					image_path: sunChipsHarvestCheddar,
-					brandName: 'sun chips',
-				},
-				{
-					id: 'sun-ships-original',
-					name: 'Sun Chips Original',
-					image_path: sunShipsOriginal,
-					brandName: 'sun chips',
-				},
-				{
-					id: 'takis-blue-heat',
-					name: 'Takis Blue Heat',
-					image_path: takisBlueHeat,
-					brandName: 'Takis',
-				},
-				{
-					id: 'takis-nacho-xplosion',
-					name: 'Takis Nacho Xplosion',
-					image_path: takisNachoXplosion,
-					brandName: 'Takis',
-				},
+			],
+		},
+		sunChips: {
+			id: 'sunChips',
+			accent: '#ee0c00',
+			brandLogo: <img src={sunChipsLogo} />,
+			items: [
 				{
 					id: 'tostitos-salsa-verde',
 					name: 'Tostitos Salsa Verde',
 					image_path: tostitosSalsaVerde,
 					brandName: 'Tostitos',
 				},
+			],
+		},
+		missVickies: {
+			id: 'missVickies',
+			accent: '#ee0c00',
+			brandLogo: <img src={mrsVickiesLogo} />,
+			items: [
 				{
-					id: 'cheetos-crunchy',
-					name: 'Cheetos Crunchy',
-					image_path: cheetosCrunchy,
-					brandName: 'Cheetos',
+					id: 'miss-bickies-sea-salt-and-vinegar',
+					name: 'Miss Bickies Sea Salt and Vinegar',
+					image_path: missBickiesSeaSaltAndVinegar,
+					brandName: '',
 				},
 				{
-					id: 'cheetos-flaming-hot-crunchy',
-					name: 'Cheetos Flaming Hot Crunchy',
-					image_path: cheetosFlamingHotCrunchy,
-					brandName: 'Cheetos',
+					id: 'miss-bickies-sea-salt',
+					name: 'Miss Bickies Sea Salt',
+					image_path: missBickiesSeaSalt,
+					brandName: '',
 				},
 				{
-					id: 'cheetos-puffs',
-					name: 'Cheetos Puffs',
-					image_path: cheetosPuffs,
-					brandName: 'Cheetos',
+					id: 'miss-vickies-jalapeno',
+					name: 'Miss Vickies Jalapeno',
+					image_path: missVickiesJalapeno,
+					brandName: '',
 				},
+			],
+		},
+		smartFood: {
+			id: 'smartFood',
+			accent: '#ee0c00',
+			brandLogo: <img src={smartFoodLogo} />,
+			items: [
 				{
-					id: 'chesters-flaming-hot-fries',
-					name: 'Chesters Flaming Hot Fries',
-					image_path: chestersFlamingHotFries,
-					brandName: 'chesters',
+					id: 'smartfood-white-cheddar',
+					name: 'Smartfood White Cheddar',
+					image_path: smartfoodWhiteCheddar,
+					brandName: 'smartfood',
 				},
-				{
-					id: 'cracker-jack',
-					name: 'Cracker Jack',
-					image_path: crackerJack,
-					brandName: 'cracker-jack',
-				},
+			],
+		},
+		doritos: {
+			id: 'doritos',
+			accent: '#f65600',
+			brandLogo: <img src={doritosLogo} />,
+			items: [
 				{
 					id: 'doritos-dinamita-chile-lemon',
 					name: 'Dorito Dinamita Chile Lemon',
@@ -456,12 +504,26 @@ export const webData = {
 					image_path: doritosSpicySweetChili,
 					brandName: 'Doritos',
 				},
+			],
+		},
+		fritos: {
+			id: 'fritos',
+			accent: '#f65600',
+			brandLogo: <img src={FritosLogo} />,
+			items: [
 				{
 					id: 'fritos',
 					name: 'Fritos',
 					image_path: fritos,
 					brandName: 'fritos',
 				},
+			],
+		},
+		lams: {
+			id: 'lams',
+			accent: '#f65600',
+			brandLogo: <img src={lamsLogo} />,
+			items: [
 				{
 					id: 'lams-plantanis',
 					name: 'Lams Plantanis',
@@ -479,6 +541,25 @@ export const webData = {
 					name: 'Lams Yuca',
 					image_path: lamsYuca,
 					brandName: 'Lams',
+				},
+			],
+		},
+		takis: {
+			id: 'takis',
+			accent: '#572e8a',
+			brandLogo: <img src={takisLogo} />,
+			items: [
+				{
+					id: 'takis-blue-heat',
+					name: 'Takis Blue Heat',
+					image_path: takisBlueHeat,
+					brandName: 'Takis',
+				},
+				{
+					id: 'takis-nacho-xplosion',
+					name: 'Takis Nacho Xplosion',
+					image_path: takisNachoXplosion,
+					brandName: 'Takis',
 				},
 			],
 		},
@@ -1112,7 +1193,7 @@ export const webData = {
 		},
 		laBayamesa: {
 			id: 'laBayamesa',
-			brandlogo: <img src={bayamesaLogo} alt='bayamesa' />,
+			brandlogo: <img src={bayamesaLogo} alt="bayamesa" />,
 			items: [
 				{
 					id: 'crema-de-leche',
@@ -1195,5 +1276,37 @@ export const webData = {
 				},
 			],
 		},
+	},
+};
+
+export const aboutUsContent = {
+	welcome: {
+		heading:
+			'Welcome to Sweet and Sugar – Your Gateway to Exceptional Sweets!',
+		paragraph:
+			'At Sweet and Sugar, we believe that life is sweeter with a touch of indulgence, and our mission is to bring you a curated selection of the finest and rarest sweet delights from around the world. Established with a passion for elevating the sweet experience, we have become the go-to destination for connoisseurs who appreciate the artistry and diversity that exceptional sweets can offer.',
+	},
+	ourStory: {
+		heading: 'Our Story:',
+		paragraph:
+			'Founded with a vision to transform ordinary moments into extraordinary memories, Sweet and Sugar is a small business born out of love for all things sweet. With an unwavering commitment to quality and uniqueness, we scour the globe to handpick rare sweet brands that redefine the boundaries of taste and texture.',
+	},
+	whatSetsUsApart: {
+		heading: 'What Sets Us Apart:',
+		paragraph:
+			'At Sweet and Sugar, we take pride in being more than just a confectionery store. We are curators of sweetness, dedicated to bringing you an exclusive selection of sweets that transcend the ordinary. From artisanal chocolates to exotic chips and mouth-watering cakes, our inventory is a carefully crafted assortment of rare gems that are sure to tantalize your taste buds.',
+	},
+	whyChooseUs: {
+		heading: 'Why Choose Sweet and Sugar:',
+		list: [
+			'Rare Finds: Our collection features sweets that are not easily found elsewhere, giving you the opportunity to discover and savor unique flavors.',
+			'Quality Assurance: We prioritize quality above all else. Every sweet in our inventory undergoes a rigorous selection process to ensure that only the finest products make it to our shelves.',
+			'Global Delights: Explore the world of sweets without leaving your home. Our diverse range includes delicacies from various corners of the globe, allowing you to embark on a sweet journey with every purchase.',
+			'Passionate Team: The Sweet and Sugar team is fueled by a shared passion for sweets. We are committed to providing you with excellent customer service and a delightful shopping experience.',
+		],
+	},
+	closing: {
+		paragraph:
+			'Join us at Sweet and Sugar, where every sweet is a celebration, and every bite is a moment of pure bliss. Indulge in the extraordinary – because you deserve nothing less.',
 	},
 };
